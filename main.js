@@ -83,20 +83,22 @@ window.onload=function () {
   } else {
     l_div.style.opacity="1";
     let ips = localStorage.getItem('ips');
-    console.log(ips)
+    //console.log(ips)
+    if(ips)
+      ips=0;
     like_p.innerHTML = `So far, ${ips} people have liked my resume. What do you think?`;
     if(window.innerWidth<576)
       document.body.style.marginBottom=l_div.getBoundingClientRect().height*1.2+"px";
 
   }
 }
-  if (window.innerWidth < 768 && window.innerWidth>270) {
+  if (window.innerWidth < 768 && window.innerWidth>290) {
     active(true);
   }
   else
     active(false)
   window.addEventListener('resize',function () {
-    if (window.innerWidth < 768 && window.innerWidth>270) {
+    if (window.innerWidth < 768 && window.innerWidth>290) {
       active(true);
     }
     else
@@ -194,3 +196,10 @@ like_b.addEventListener("mousedown",function(ev) {
   document.cookie="userLiked=true;path=/;";
   console.log(ips);
 });
+// fetch('http://localhost:3000/api/get_likes_count', {
+//   method: 'GET'
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+// .catch(e => console.error('this is catch err: ', e));
+

@@ -1,6 +1,6 @@
 @font-face {
   font-family: font;
-  src: url("font4.otf");
+  src: url("font.otf");
 }
 :root{
   font-size: 20px;
@@ -52,7 +52,7 @@ body{
   margin: 0 15px 15px 20px;
 }
 #my-photo{
-  align-self: stretch;
+  align-self: flex-end;
   width: 200px;
 }
 #div-total-info{
@@ -392,6 +392,10 @@ body{
   .jobs p,h4{
     text-align: left;
   }
+   
+  #my-photo{
+    display: none;
+  }
 
 }
 @media screen and (max-width: 576px) {
@@ -445,10 +449,7 @@ body{
     width: 40%;
 
   }
-  
-  #my-photo{
-    display: none;
-  }
+ 
   #div-menu h1,p{
     z-index: 2;
   }
